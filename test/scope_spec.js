@@ -68,7 +68,7 @@ describe('Scope', function() {
             expect(watchFn).toHaveBeenCalled();
         });
         it('triggers chained watchers in the same digest', function(){
-            scope.name = "Jane";
+            scope.name = "Ariel";
             scope.$watch(
                 function(scope){ return scope.nameUpper;},
                 function(newValue, oldValue, scope){
@@ -87,10 +87,10 @@ describe('Scope', function() {
                 }
             );
             scope.$digest();
-            expect(scope.initial).toBe('J.');
-            scope.name = 'Bob',
+            expect(scope.initial).toBe('A.');
+            scope.name = 'Dylan',
             scope.$digest();
-            expect(scope.initial).toBe('B.');
+            expect(scope.initial).toBe('D.');
         });
     });
 });
